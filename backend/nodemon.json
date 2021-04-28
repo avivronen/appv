@@ -1,0 +1,6 @@
+{
+  "env": {
+    "MONGO_ATALS_PW": "sdfsdfds",
+    "JWT_KEY": "secret1151412412412412412"
+  }
+}

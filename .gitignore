@@ -1,0 +1,5 @@
+/devsetup.sh
+/backend/node_modules
+/backend/api/node_modules
+/front/appv-app/node_modules
+./.idea

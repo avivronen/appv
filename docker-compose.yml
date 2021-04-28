@@ -1,0 +1,32 @@
+version: '3.7'
+services:
+
+  react:
+    build: ./docker/npreactdocker
+    container_name: appv-react
+    working_dir: /application
+    command: npm start
+    restart: always
+    volumes:
+      - ./front/appv-app:/application
+    ports:
+      - "3005:3005"
+
+  nest1:
+    container_name: appv-express
+    build: ./docker/nestdocker
+    restart: always
+    volumes:
+      - ./backend:/application
+      #- /application/node_modules
+    ports:
+      - 3000:3000
+      - 9229:9229
+    command: npm run start
+    env_file:
+      - ./docker/.env
+
+
+  # docker exec -it appv-nest1 sh
+  # docker exec -it appv-react sh
+  # npm run typeorm migration:run
